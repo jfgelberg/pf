@@ -9,7 +9,9 @@ const PORT = 3001;
 const rapidApiHost = 'meteostat.p.rapidapi.com';
 const rapidApiKey = '2c60a9a0a8msh29844562b8c4db9p16acc3jsn153dca1865e6'; // tu clave de RapidAPI
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://regionactiva.com', // o especificá: origin: 'https://regionactiva.com'
+}));
 
 app.get('/api/clima', async (req, res) => {
   const { lat, lon, start, end } = req.query;
